@@ -33,6 +33,7 @@ A portable development environment for Visual Basic 6.0 that has evolved into a 
 - **[VB9 Demo](vb9/DEMO.md)** - See the evolution from VB6 to VB9
 - **[VB9 Developer Guide](vb9/GUIDE.md)** - Complete development guide
 - **[VB9 Summary](vb9/SUMMARY.md)** - Project achievements and results
+- **[VB9 Future Features](VB9-FUTURE-FEATURES.md)** - Next-generation VB9 capabilities and roadmap
 
 ### 🔬 Research Discoveries  
 - **[Plan 9 Font Architecture Mysteries](Plan%209%20Font%20Architecture%20Mysteries%20Claude.md)** - Deep dive into fonts as computational primitives (2361 lines)
