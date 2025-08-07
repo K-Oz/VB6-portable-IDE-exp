@@ -9,18 +9,23 @@
 #include <event.h>
 #include <keyboard.h>
 
+#ifndef VB9_H_TYPEDEFS
+#define VB9_H_TYPEDEFS
+typedef unsigned long long uint64_t;
+#endif
+
 typedef struct Point Point;
 typedef struct Rectangle Rectangle;
 typedef struct Image Image;
 typedef struct Font Font;
 
-/* Control types - matching VB6 basics */
+/* Control types - prime numbers in computational space */
 enum {
-    VB9_BUTTON   = 1,
-    VB9_TEXTBOX  = 2, 
-    VB9_LABEL    = 3,
-    VB9_LISTBOX  = 4,
-    VB9_FORM     = 5
+    VB9_BUTTON   = 2,    /* first prime - fundamental interaction */
+    VB9_TEXTBOX  = 3,    /* second prime - input/output */
+    VB9_LABEL    = 5,    /* third prime - information display */
+    VB9_LISTBOX  = 7,    /* fourth prime - selection/enumeration */
+    VB9_FORM     = 11    /* fifth prime - container space */
 };
 
 /* Event types */
@@ -82,6 +87,7 @@ VB9Form*    vb9_form_new(char *name, char *title);
 void        vb9_form_show(VB9Form *form);
 void        vb9_form_hide(VB9Form *form);
 void        vb9_form_destroy(VB9Form *form);
+uint64_t    vb9_form_signature(VB9Form *form);  /* Prime factorization signature */
 
 /* Control management */
 Control*    vb9_control_new(VB9Form *form, int type, char *name);
@@ -103,6 +109,7 @@ void        vb9_handle_9p_request(Control *ctrl, char *op, char *data);
 void        vb9_draw_form(VB9Form *form);
 void        vb9_draw_control(Control *ctrl);
 void        vb9_redraw_all(VB9Runtime *rt);
+void        vb9_create_control_namespace(Control *ctrl, VB9Form *form);  /* Auto-create namespace when drawing */
 
 /* Utility functions */
 Rectangle   vb9_rect(int x, int y, int w, int h);

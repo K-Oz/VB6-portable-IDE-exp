@@ -2,7 +2,7 @@
 
 </$objtype/mkfile
 
-TARG=formdesigner hello calculator
+TARG=formdesigner hello calculator primordial
 
 HFILES=\
 	include/vb9.h\
@@ -24,6 +24,10 @@ hello: examples/hello.$O $OFILES
 
 # Calculator example
 calculator: examples/calculator.$O $OFILES
+	$LD -o $target $prereq
+
+# Primordial button - archaeological proof
+primordial: examples/primordial.$O $OFILES
 	$LD -o $target $prereq
 
 # Standard Plan 9 build rules

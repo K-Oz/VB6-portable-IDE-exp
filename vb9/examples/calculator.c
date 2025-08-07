@@ -23,6 +23,7 @@ main(void)
     Control *btn_add, *btn_sub, *btn_mul, *btn_div;
     Control *btn_0, *btn_1, *btn_2, *btn_3, *btn_4;
     Control *btn_5, *btn_6, *btn_7, *btn_8, *btn_9;
+    uint64_t signature;
     
     /* Initialize VB9 - connect to computational substrate */
     rt = vb9_init();
@@ -83,6 +84,16 @@ main(void)
     /* TODO: Set custom event handlers */
     /* This is where the Plan 9 file system magic would happen */
     /* Each button would map to /calc/buttonname/click */
+    
+    /* Calculate form signature - complex computational identity */
+    signature = vb9_form_signature(form);
+    
+    print("VB9 Calculator Computational Analysis:\n");
+    print("  Total controls: %d\n", form->ncontrols);
+    print("  1 TextBox (prime 3) + 16 Buttons (prime 2^16)\n");
+    print("  Form signature: %llu\n", signature);
+    print("  This massive prime factorization IS the calculator program!\n");
+    print("  Each unique calculator has a unique computational identity!\n\n");
     
     /* Show calculator - render the computation */
     vb9_form_show(form);
