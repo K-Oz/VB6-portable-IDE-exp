@@ -8,12 +8,19 @@ The `Visual Basic 6 Portable.exe` is all you need to start developing in Visual 
 
 ## 📚 Documentation Index
 
+### 📖 Comprehensive Documentation
 - [System Architecture](docs/architecture.md) - Overview of system components and design
 - [Installation Guide](docs/installation.md) - Setup and configuration instructions  
 - [User Guide](docs/user-guide.md) - How to use the portable IDE
 - [Technical Reference](docs/technical-reference.md) - Detailed technical specifications
 - [Troubleshooting](docs/troubleshooting.md) - Common issues and solutions
 - [Diagrams Index](docs/diagrams-index.md) - Complete catalog of all Mermaid & PlantUML diagrams
+
+### 🤖 Interactive Chat Documentation
+- [Chat FAQ](docs/chat-faq.md) - Conversational answers to common questions
+- [Chat Installation Guide](docs/chat-installation.md) - Step-by-step interactive setup assistance
+- [Chat Troubleshooting](docs/chat-troubleshooting.md) - Interactive problem-solving guide
+- [Chat API Reference](docs/chat-api-reference.md) - Conversational technical documentation
 
 ## 📊 Architecture Overview
 
