@@ -19,6 +19,37 @@ graph TD
     G --> H[VB6 Development Environment]
 ```
 
+### Chat Documentation Diagrams
+
+**Chat Troubleshooting Flow** ([chat-troubleshooting.md](chat-troubleshooting.md))
+```mermaid
+flowchart TD
+    A[VB6 Portable won't start] --> B{Error Message?}
+    B -->|Permission Denied| C[Run as Administrator]
+    B -->|File Not Found| D[Check File Integrity]
+    B -->|Registry Error| E[Registry Issues]
+```
+
+**Chat Installation Process** ([chat-installation.md](chat-installation.md))
+```mermaid
+flowchart TD
+    A[Download VB6 Portable] --> B[Extract to Desired Location]
+    B --> C[Run as Administrator]
+    C --> D{Registry Setup Required?}
+    D -->|Yes| E[Accept UAC Prompt]
+    D -->|No| F[Launch AutoPlay]
+```
+
+**Chat API Component Architecture** ([chat-api-reference.md](chat-api-reference.md))
+```mermaid
+graph TD
+    A[VB6 Portable IDE System] --> B[File System API]
+    A --> C[Registry API]
+    A --> D[AutoPlay API]
+    A --> E[Component API]
+    A --> F[Deployment API]
+```
+
 **Data Flow** ([architecture.md](architecture.md))
 ```mermaid
 sequenceDiagram
