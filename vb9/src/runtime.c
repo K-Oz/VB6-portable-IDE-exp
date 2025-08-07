@@ -321,17 +321,6 @@ vb9_redraw_all(VB9Runtime *rt)
             vb9_draw_form(rt->forms[i]);
     }
 }
-{
-    int i;
-    
-    if(rt == nil)
-        return;
-        
-    for(i = 0; i < rt->nforms; i++) {
-        if(rt->forms[i] && rt->forms[i]->visible)
-            vb9_draw_form(rt->forms[i]);
-    }
-}
 
 /* Utility functions */
 Rectangle
