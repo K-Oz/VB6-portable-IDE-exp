@@ -1,0 +1,67 @@
+/*	Copyright (C) Microsoft Corporation, 1999.  All rights reserved.
+
+
+	This source code is intended only as a supplement to Microsoft
+	Development Tools and/or on-line documentation.  See these other
+	materials for detailed information regarding Microsoft code samples.
+*/
+	
+
+[
+uuid(a8c1b5d0-b316-11d1-96e9-00a0c91110eb),
+helpstring("vba Multi-threaded type library"),
+version(1.0)
+]
+library VbaMt
+{
+
+importlib("stdole2.tlb");
+
+//=============
+// MTObj1 object
+//=============
+[
+uuid(a8c1b5d1-b316-11d1-96e9-00a0c91110eb),
+odl,
+dual
+]
+interface IMTObj1 : IDispatch
+{
+    [propget] HRESULT Prop1([retval, out] VARIANT *pBogus);
+    [propput] HRESULT Prop1([in] VARIANT Bogus);
+}
+
+[
+uuid(a8c1b5d2-b316-11d1-96e9-00a0c91110eb),
+appobject
+]
+coclass MTObj1
+{
+    interface IMTObj1;
+}
+
+
+//=============
+// MTObj2 object
+//=============
+[
+uuid(8b4b6350-b318-11d1-96e9-00a0c91110eb),
+odl,
+dual
+]
+interface IMTObj2 : IDispatch
+{
+    [propget] HRESULT Prop2([retval, out] VARIANT *pBogus);
+    [propput] HRESULT Prop2([in] VARIANT Bogus);
+}
+
+[
+uuid(8b4b6351-b318-11d1-96e9-00a0c91110eb),
+appobject
+]
+coclass MTObj2
+{
+    interface IMTObj2;
+}
+
+}

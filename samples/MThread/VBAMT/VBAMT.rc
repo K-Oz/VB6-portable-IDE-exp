@@ -1,0 +1,223 @@
+/*	Copyright (C) Microsoft Corporation, 2003.  All rights reserved.
+
+
+	This source code is intended only as a supplement to Microsoft
+	Development Tools and/or on-line documentation.  See these other
+	materials for detailed information regarding Microsoft code samples.
+*/
+
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+#include "dwinvers.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MTDIALOG DIALOG DISCARDABLE  0, 0, 341, 201
+STYLE WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_MAXIMIZEBOX | WS_MINIMIZEBOX
+CAPTION "Microsoft Visual Basic(R) for Applications Multi-threaded Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab2",IDC_TAB,"SysTabControl32",TCS_RAGGEDRIGHT,9,3,326,
+                    179
+    PUSHBUTTON      "&Create Thread",IDC_MT1CREATE,251,40,69,21
+    PUSHBUTTON      "&Resume Thread",IDC_MT1START,251,77,69,21
+    PUSHBUTTON      "&Suspend Thread",IDC_MT1STOP,251,114,69,21
+    PUSHBUTTON      "&Destroy Thread",IDC_MT1DESTROY,251,151,69,21
+    LTEXT           "Thre&ads",IDC_STATIC,14,23,136,8
+    LISTBOX         IDC_MT1LIST,15,40,228,135,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_MT2LIST,15,40,228,135,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 242, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VBAMT"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,197,7,38,14
+    LTEXT           "Copyright (C) 2003 by Microsoft Corporation, All Rights Reserved",
+                    IDC_ABOUTBOX_COPYRIGHT,19,65,203,8
+    LTEXT           "",IDC_ABOUTBOX_VERSION,53,33,135,10
+    LTEXT           "",IDC_ABOUTBOX_VBAVERSION,54,49,135,10
+    LTEXT           "Microsoft Visual Basic(R) for Applications Multi-threaded Application",
+                    IDC_ABOUTBOX_APPNAME,49,10,142,17
+    ICON            IDI_APP,IDC_STATIC,7,19,20,20
+END
+
+IDD_PROJECT DIALOG DISCARDABLE  0, 0, 172, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Microsoft VBAMT"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,23,64,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,98,64,50,14
+    CONTROL         "&Create a new project",IDC_NEWPROJ,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,25,10,110,15
+    CONTROL         "&Open an existing project",IDC_OPENPROJ,"Button",
+                    BS_AUTORADIOBUTTON,25,37,110,15
+END
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TYPELIB
+//
+
+1            TYPELIB DISCARDABLE     "vbamt.tlb"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,vusVersNumf2,vusVersNuml2
+ PRODUCTVERSION vusMajorVer,vusMinorVer,vusVersNumf2,vusVersNuml2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", vszMakeDate
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "VBA MultiThreaded Sample Application\0"
+		    VALUE "FileVersion", "1.00." vszVersNum
+            VALUE "InternalName", "VBAMT\0"
+            VALUE "LegalCopyright", vszCopyright
+			VALUE "LegalTrademarks", "APC(TM) is a trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation. Microsoft®, Visual Basic®, and Visual Basic for Applications® are registered trademarks of Microsoft Corporation.\0"
+            VALUE "OriginalFilename", "vbamt.EXE\0"
+            VALUE "ProductName", "Visual Basic for Applications Software Development Kit\0"
+			VALUE "ProductVersion", vszVersNumAll "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINMENU ACCELERATORS DISCARDABLE 
+BEGIN
+    "1",            ID_MT1,                 VIRTKEY, ALT, NOINVERT
+    "2",            ID_MT2,                 VIRTKEY, ALT, NOINVERT
+    VK_F11,         ID_TOOLS_VBE,           VIRTKEY, ALT, NOINVERT
+    VK_TAB,         ID_TOGGLE_TAB,          VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VBE                 BITMAP  DISCARDABLE     "Res\\Vbe.bmp"
+IDB_APP                 BITMAP  DISCARDABLE     "Res\\mtsample.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APP                 ICON    DISCARDABLE     "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TAB1                "MT&1 Thread IDs"
+    IDS_TAB2                "MT&2 Thread IDs"
+    IDS_FILE                "&File"
+    IDS_EXIT                "E&xit"
+    IDS_TOOLS               "&Tools"
+    IDS_VBE                 "&Visual Basic Editor\tAlt+F11"
+    IDS_HELP                "&Help"
+    IDS_ABOUT               "&About VBAMT"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
