@@ -1,0 +1,72 @@
+DESCRIPTION OF LICENSED SOFTWARE, DOCUMENTATION 
+AND REDISTRIBUTABLE COMPONENTS
+
+1.  Licensed Software.
+
+A.	Visual Basic for Applications is an embeddable BASIC language software product comprised of the following components:
+
+VBA 
+
+These are the binary files that make up the core VBA deliverable.  This includes the language runtime and user interface components including editing, debugging, project management, property control. It also includes the files need for Multi-threading and the multi-threading runtime. 
+
+VBE6.DLL, VBE6EXT.OLB, SCP32.DLL, VBE6INTL.DLL, VBAME.DLL, LINK.EXE, MSPDB60.DLL, MTDSR.DLL, VBA6MTRT.DLL, VB6DEBUG.DLL   
+APC 
+
+These are the binary files that make up the application programming interface (API) layer to integrate VBA.
+
+APC65.DLL, APC60ITL.DLL 
+
+Microsoft Forms
+
+Microsoft Forms provides a complete visual editing and dialog design environment. 
+
+FM20.DLL, FM20ENU.DLL, RICHED20.DLL
+
+Core Technology
+
+VBA is dependent on a set of MICROSOFT core proprietary technology.  These technologies are to be consumed by VBA only.  Hosts of VBA are forbidden from accessing core technology directly. 
+
+MSO.DLL, MSOINTL.DLL, SELFCERT.EXE, SIGNER.DLL, MSVBVM60.DLL, MSSTDFMT.DLL, MSSTKPRP.DLL, HLP95EN.DLL    
+
+Sample Host Application
+
+MICROSOFT provides a complete sample host that demonstrates the complete VBA integration model.  This sample is available in full source format.
+
+VBA Core Installer Package (MSI)
+
+MICROSOFT provides a setup package that installs all the core VBA technologies onto an end users machine.  This prevents accidental disabling of VBA functionality due to an improper installation of VBA components. 
+
+2.  Documentation.
+
+End User Documentation
+
+A set of end user documentation is provided by VBA consisting of:
+
+* VBA Language Reference
+* Microsoft Forms Reference
+
+The above documentation is delivered in two forms. Both online help systems have complete hyper-links and indexing features. ISVs can use the documentation in either form for integrating their own help files and format.
+ 
+FM20.CHM, MSOHELP.CHM, VBENDF98.CHM, VBHW6.CHM, VBUI6.CHM, VBOB6.CHM, VBCN6.CHM, VBLR6.CHM, MSOHLP11.CHM, OFMAIN11.CHM, VBAOF11.CHM
+
+VBA Programmer's Guide 
+
+This document gives an overview of the first phase of the integration process.  It documents the functionality demonstrated by the sample application and provides theoretical background into technical issues the ISV may encounter.  
+
+VBA SDK Reference
+
+A complete VBA interface reference with examples is provided in an online form 
+
+VBA6SDK.CHM
+
+3.  Redistributable Components.
+The following is a list of components that can be redistributed
+
+* VBA
+* APC
+* Microsoft Forms
+* Core Technology   
+* End User Documentation and derivatives
+* VBA Core Installer Package
+
+
