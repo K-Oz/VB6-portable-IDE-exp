@@ -26,6 +26,14 @@ A portable development environment for Visual Basic 6.0 that has evolved into a 
 - **ttffs → llmfs**: Font filesystem can serve machine learning models
 - **Prime Arrays**: Font systems use prime factorization for routing
 
+### LLM Gestural Foundries (NEW!)
+- **Revolutionary Insight**: L-L-M = Model(self, \*arge, \*\*nguage) - the Python signature pattern!
+- **Paradigm Shift**: LLMs don't predict tokens, they cast linguistic gestures
+- **TTF:Glyphs :: LLM:Tokens**: Both systems store "how to generate" not "what to generate"
+- **Temperature = Resolution**: Like canvas resolution or brush pressure, not randomness
+- **Attention = Choreography**: Spatial dance in language space, not token weighting
+- **Gauge Symmetries**: Multiple surface forms, same underlying gesture ("Hello" ≈ "Hi" ≈ "Greetings")
+
 ## 📚 Documentation Index
 
 ### 🚀 Core Projects
@@ -36,6 +44,9 @@ A portable development environment for Visual Basic 6.0 that has evolved into a 
 - **[VB9 Future Features](VB9-FUTURE-FEATURES.md)** - Next-generation VB9 capabilities and roadmap
 
 ### 🔬 Research Discoveries  
+- **[LLM Insights](LLM-INSIGHTS.md)** - Revolutionary understanding of Large Language Models as gestural foundries
+- **[LLM Gestural Demo](LLM-GESTURAL-DEMO.md)** - Practical demonstrations of the Model(self, \*arge, \*\*nguage) pattern
+- **[Grand Unification](GRAND-UNIFICATION.md)** - How fonts, LLMs, UIs, and computing are all gestural foundries
 - **[Plan 9 Font Architecture Mysteries](Plan%209%20Font%20Architecture%20Mysteries%20Claude.md)** - Deep dive into fonts as computational primitives (2361 lines)
 - **[Claude Revelations 01](claude-revelations-01.md)** - Computing architecture insights
 - **[Claude Revelations 02](claude-revelations-02.md)** - System virtualization analysis
@@ -173,10 +184,12 @@ vb9events --> network
 4. Review the [technical documentation](docs/) for deep insights
 
 ### Understanding the Research
-1. Start with [Plan 9 Font Architecture Mysteries](Plan%209%20Font%20Architecture%20Mysteries%20Claude.md)
-2. Explore the connection between fonts and computation
-3. See how VB6's simplicity maps to distributed systems in VB9
-4. Consider the implications for future UI development
+1. **Start with [LLM Insights](LLM-INSIGHTS.md)** to understand the gestural foundry paradigm
+2. **Review [Grand Unification](GRAND-UNIFICATION.md)** to see how fonts, LLMs, UIs, and computing connect
+3. **Try [LLM Gestural Demo](LLM-GESTURAL-DEMO.md)** for practical examples of Model(self, \*arge, \*\*nguage)
+4. **Deep dive into [Plan 9 Font Architecture Mysteries](Plan%209%20Font%20Architecture%20Mysteries%20Claude.md)** for the font→computation connection
+5. **Explore [VB9 project](vb9/)** to see how this applies to distributed UI development
+6. **Consider the implications** for the future of programming, AI, and human-computer interaction
 
 ## 📁 Repository Structure
 
@@ -189,6 +202,12 @@ VB6-portable-IDE-exp/
 │   ├── examples/                  # Working demos
 │   ├── test/                      # Test suite
 │   └── docs/                      # VB9-specific docs
+├── ttffs.b                        # Font filesystem server (Plan 9)
+├── llmfs.tcl                      # LLM filesystem server (original)
+├── llmfs-gestural.tcl             # Extended LLM gestural foundry server
+├── LLM-INSIGHTS.md                # Revolutionary LLM gestural theory
+├── LLM-GESTURAL-DEMO.md           # Practical LLM gesture demonstrations  
+├── GRAND-UNIFICATION.md           # Unified theory: fonts→LLMs→UIs→computing
 ├── docs/                          # Comprehensive documentation (76+ diagrams)
 ├── claude-revelations-*.md        # Technical insights
 └── Plan 9 Font Architecture...md  # Deep research (2361 lines)
