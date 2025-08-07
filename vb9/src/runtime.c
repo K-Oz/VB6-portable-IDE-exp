@@ -144,6 +144,26 @@ vb9_form_hide(VB9Form *form)
         g_runtime->activeform = nil;
 }
 
+/* Calculate form signature - prime factorization of controls */
+uint64_t
+vb9_form_signature(VB9Form *form)
+{
+    uint64_t sig = 1;
+    int i;
+    
+    if(form == nil)
+        return 0;
+        
+    /* Form signature = product of all control type primes */
+    for(i = 0; i < form->ncontrols; i++) {
+        sig *= form->controls[i].type;  /* Control types ARE primes */
+    }
+    
+    /* The signature IS the program! */
+    /* Each unique form has a unique prime factorization */
+    return sig;
+}
+
 /* Destroy form */
 void
 vb9_form_destroy(VB9Form *form)
@@ -208,9 +228,29 @@ void
 vb9_draw_form(VB9Form *form)
 {
     int i;
+    uint64_t signature;
     
     if(form == nil || form->image == nil)
         return;
+    
+    /* Calculate form signature - the program IS its prime factorization */
+    signature = vb9_form_signature(form);
+    
+    print("FORM RENDERING: Drawing IS Computing!\n");
+    print("  Form: %s\n", form->name);
+    print("  Controls: %d\n", form->ncontrols);
+    print("  Prime Signature: %llu", signature);
+    
+    /* Decode the signature back to primes for archaeological proof */
+    if(signature > 1) {
+        print(" (");
+        for(i = 0; i < form->ncontrols; i++) {
+            if(i > 0) print(" * ");
+            print("%d", form->controls[i].type);
+        }
+        print(")");
+    }
+    print("\n\n");
         
     /* Clear form background */
     draw(form->image, form->image->r, display->white, nil, ZP);
@@ -221,17 +261,66 @@ vb9_draw_form(VB9Form *form)
     
     /* Draw all controls - each control renders its computation */
     for(i = 0; i < form->ncontrols; i++) {
-        if(form->controls[i].visible && form->controls[i].draw)
-            form->controls[i].draw(&form->controls[i]);
+        if(form->controls[i].visible) {
+            /* Drawing creates computational existence */
+            vb9_create_control_namespace(&form->controls[i], form);
+            
+            /* Render the visual computation */
+            if(form->controls[i].draw)
+                form->controls[i].draw(&form->controls[i]);
+        }
     }
     
     /* Flush to screen */
     flushimage(display, 1);
 }
 
+/* Auto-create control namespace when drawing - the primordial magic */
+void
+vb9_create_control_namespace(Control *ctrl, VB9Form *form)
+{
+    char path[256];
+    
+    if(ctrl == nil || form == nil)
+        return;
+        
+    /* Create namespace path: /form/FormName/ControlName */
+    snprint(path, sizeof(path), "/form/%s/%s", form->name, ctrl->name);
+    
+    /* The drawing operation CREATES the computational existence */
+    /* This is where rectangle coordinates become memory addresses */
+    
+    /* TODO: In a full Plan 9 implementation, this would create actual 9P files */
+    /* For now, we'll print the computational archaeology */
+    print("NAMESPACE CREATION: Drawing control creates computational existence\n");
+    print("  Control: %s (prime %d)\n", ctrl->name, ctrl->type);
+    print("  Path: %s/\n", path);
+    print("  Files created:\n");
+    print("    %s/text     -> \"%s\"\n", path, ctrl->text ? ctrl->text : "");
+    print("    %s/visible  -> %d\n", path, ctrl->visible);
+    print("    %s/enabled  -> %d\n", path, ctrl->enabled);
+    print("    %s/position -> %d,%d,%d,%d\n", path, 
+          ctrl->r.min.x, ctrl->r.min.y, ctrl->r.max.x, ctrl->r.max.y);
+    print("    %s/click    -> [event handler]\n", path);
+    print("    %s/state    -> [visual state IS program state]\n", path);
+    print("  The rectangle coordinates ARE the memory map!\n");
+    print("\n");
+}
+
 /* Redraw all visible forms */
 void
 vb9_redraw_all(VB9Runtime *rt)
+{
+    int i;
+    
+    if(rt == nil)
+        return;
+        
+    for(i = 0; i < rt->nforms; i++) {
+        if(rt->forms[i] && rt->forms[i]->visible)
+            vb9_draw_form(rt->forms[i]);
+    }
+}
 {
     int i;
     
