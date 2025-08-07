@@ -5,14 +5,17 @@ CFLAGS = -Wall -Wextra -std=c99 -Iinclude -g
 LIBS = -lm
 
 # Source files
-COMMON_SRCS = src/neural.c src/quantum.c src/font-coding.c
+COMMON_SRCS = src/neural.c src/quantum.c src/font-coding.c src/glyph-kernel.c
 TEST_SRCS = test/test-vb9-advanced.c
 
 # Stub implementations to avoid link errors
 STUB_SRCS = stubs.c
 
 # Targets
-all: test-vb9-advanced
+all: test-vb9-advanced glyph-kernel-standalone
+
+glyph-kernel-standalone: glyph-kernel-standalone.c
+	$(CC) $(CFLAGS) -o $@ glyph-kernel-standalone.c $(LIBS)
 
 # Create stub implementations for Plan 9 specific functions
 stubs.c:
@@ -60,6 +63,6 @@ test-vb9-advanced: $(COMMON_SRCS) $(TEST_SRCS) stubs.c include/vb9.h
 	$(CC) $(CFLAGS) -o $@ $(COMMON_SRCS) $(TEST_SRCS) stubs.c $(LIBS)
 
 clean:
-	rm -f test-vb9-advanced stubs.c include/vb9.h
+	rm -f test-vb9-advanced glyph-kernel-standalone stubs.c include/vb9.h
 
 .PHONY: all clean
