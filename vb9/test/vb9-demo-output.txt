@@ -1,0 +1,21 @@
+VB9 Architecture Test - Drawing IS Computing!
+
+VB9 Form: HelloForm (VB9 Hello World)
+Size: 350 x 250
+Controls: 2
+  Label1: "Hello from VB9!" at (10,30) size (100x15)
+  Command1: "Click Me" at (10,60) size (75x23)
+
+This form would render via /dev/draw in Plan 9!
+Each control would be accessible as files:
+  /form/HelloForm/Label1/text -> "Hello from VB9!"
+  /form/HelloForm/Label1/click -> (event handler)
+  /form/HelloForm/Command1/text -> "Click Me"
+  /form/HelloForm/Command1/click -> (event handler)
+
+VB9 demonstrates:
+✓ VB6-style simplicity (drag, drop, done)
+✓ Plan 9 file system integration
+✓ Drawing as computational interface
+✓ Network transparency potential
+✓ Sub-1MB runtime target
