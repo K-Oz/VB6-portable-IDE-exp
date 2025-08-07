@@ -1,0 +1,40 @@
+# Plan 9 mkfile for VB9 - Minimal Build Like VB6
+
+</$objtype/mkfile
+
+TARG=formdesigner hello calculator
+
+HFILES=\
+	include/vb9.h\
+	include/controls.h\
+
+OFILES=\
+	src/runtime.$O\
+	src/controls.$O\
+
+BIN=/bin
+
+# Form designer - the visual IS the program
+formdesigner: src/formdesigner.$O $OFILES
+	$LD -o $target $prereq
+
+# Hello world example  
+hello: examples/hello.$O $OFILES
+	$LD -o $target $prereq
+
+# Calculator example
+calculator: examples/calculator.$O $OFILES
+	$LD -o $target $prereq
+
+# Standard Plan 9 build rules
+%.$O: %.c
+	$CC $CFLAGS $stem.c
+
+install:V: $TARG
+	cp $TARG $BIN
+
+clean:V:
+	rm -f *.[$OS] $TARG src/*.[$OS] examples/*.[$OS]
+
+nuke:V: clean
+	rm -f $TARG
